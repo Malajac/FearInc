@@ -4,7 +4,11 @@ from .models import News
 
 def index(request):
     news = News.objects.all()
-    return render(request, 'news/index.html', {'news': news, 'title': 'News list'})
+    context = {
+        'news': news,
+        'title': 'News list'
+    }
+    return render(request, 'news/index.html', context)
 
 def test(request):
     return HttpResponse('Test page')
