@@ -6,7 +6,7 @@ class News(models.Model):
     content = models.TextField(blank=True, verbose_name='Content')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Published on')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated on')
-    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Photo')
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Photo', blank=True)
     is_published = models.BooleanField(default=True, verbose_name='Published?')
 
     def __str__(self):
