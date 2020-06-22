@@ -8,7 +8,7 @@ class News(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated on')
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Photo', blank=True)
     is_published = models.BooleanField(default=True, verbose_name='Published?')
-    category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True)
+    category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, verbose_name='Category')
 
     def __str__(self):
         return self.title
