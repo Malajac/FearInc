@@ -22,6 +22,9 @@ class News(models.Model):
 class Category(models.Model):
     title = models.CharField(max_length=150, db_index=True, verbose_name="Category title")
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Category list'
